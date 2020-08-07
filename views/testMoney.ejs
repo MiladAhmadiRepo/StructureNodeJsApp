@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="main-box">
+            <div class="col-sm-12 text-center">
+                <p><img src="<%if(verify){%>../assets/img/success_vector.svg<%}
+                else
+                    {%>../assets/img/failed_vector.svg<%}%>" width="50" height="50"></p>
+
+                <p class="text-light" style="font-size: 2rem;">operation <%if(!verify){%>yea<%}%>success</p>
+                <p class="text-light"><%if(!verify){%>get error.<%}else {%>success operation.<%}%></p>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="float-right">phone number</span>
+                        <span class="float-left"><%=mobile%></span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="float-right">package amount</span>
+                        <span class="float-left"><%=amount%> $</span>
+                    </li>
+
+                    <li class="list-group-item bg-dark" >
+                        <a href="<%if(verify){%>asdapp://succes<%}else{%>asdapp://failed<%}%>">
+                            <span class="text-light" style="font-size: 20px;">open app</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
